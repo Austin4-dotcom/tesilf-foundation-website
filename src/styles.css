@@ -83,40 +83,46 @@ body{background:#fff;color:var(--ink)}
 .girlStory>div{padding-top:8px}
 .girlStory img{object-position:center top}
 
+/* Girl Within school photography — original proportions and distinct school groupings */
+.schoolVisits{margin-top:28px}
+.schoolVisitIntro{margin:0 0 18px}
+.schoolVisitIntro h3{margin:0 0 8px;font-family:Georgia,serif;font-size:30px}
+.schoolVisitIntro p{max-width:730px}
+.schoolTabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0 30px}
+.schoolTabs button{padding:16px 20px;border:1px solid #dce6df;border-radius:5px;background:#fff;text-align:left;color:#22394b;font-weight:700;line-height:1.4;transition:background .2s,border .2s}
+.schoolTabs button small{display:block;color:#60776e;font-size:12px;font-weight:500;margin-top:5px}
+.schoolTabs button.selected{background:#eaf3ec;border-color:#397a5b;box-shadow:inset 4px 0 0 #397a5b}
+.schoolActiveHeading{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:1px solid #dce6df;padding-bottom:20px;margin-bottom:25px}
+.schoolActiveHeading h4{font-size:clamp(24px,3vw,32px);margin:0;font-family:Georgia,serif}
+.schoolActiveHeading>span{font-size:13px;color:#60776e}
+.schoolPhotoGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.schoolPhotoGrid figure{margin:0;border:1px solid #e2e8e5;background:#fff;border-radius:5px;overflow:hidden;box-shadow:0 8px 24px rgba(12,32,53,.06)}
+.schoolPhotoGrid img{display:block;width:100%;height:auto;object-fit:contain;background:#f5f7f5}
+.schoolPhotoGrid figcaption{padding:9px 12px;color:#536a5e;font-size:11px;letter-spacing:.01em}
+.girlStory img{object-position:center top}
+@media(max-width:780px){.schoolPhotoGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+@media(max-width:500px){.schoolTabs,.schoolPhotoGrid{grid-template-columns:1fr}.schoolActiveHeading{align-items:start}}
 
-/* FIX: Homepage image caption and 20 participants card */
 
-.heroFinal .imageLabel {
-    left: 20px;
-    right: 255px;
-    bottom: 24px;
-    z-index: 2;
-}
+/* Homepage image refinement: text and statistic live beneath photo, not over it */
+.heroFinal .heroVisualClean {position:relative;display:flex;flex-direction:column;gap:0;min-height:0;width:100%;margin:0;}
+.heroFinal .heroVisualClean .heroImageWrap {position:relative;inset:auto;display:block;width:100%;height:clamp(320px,33vw,455px);border-radius:5px 5px 0 0;overflow:hidden;box-shadow:none;}
+.heroFinal .heroVisualClean .heroImageWrap img {width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;}
+.heroFinal .heroInfoRow {display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,205px);align-items:stretch;gap:0;background:#fff;border:1px solid #e0e6e7;border-top:0;box-shadow:0 16px 35px rgba(12,32,53,.09);}
+.heroFinal .heroCaptionBelow {padding:23px 24px;min-width:0;display:flex;flex-direction:column;justify-content:center;}
+.heroFinal .heroCaptionBelow span {display:block;margin:0 0 7px;color:#397a5b;font-weight:800;font-size:10px;letter-spacing:.14em;}
+.heroFinal .heroCaptionBelow p {margin:0;font-family:Manrope,sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.45;color:#172d41;}
+.heroFinal .heroVisualClean .heroStat {position:static;inset:auto;display:flex;flex-direction:column;justify-content:center;width:auto;padding:18px 20px;background:#f5f8f5;border:0;border-left:3px solid #e4b65c;border-radius:0;box-shadow:none;}
+.heroFinal .heroVisualClean .heroStat span {font-size:9px;line-height:1.6;}
+.heroFinal .heroVisualClean .heroStat strong {font-size:42px;line-height:1;margin:6px 0;}
+.heroFinal .heroVisualClean .heroStat small {font-size:12px;line-height:1.4;}
+@media(max-width:980px){.heroFinal .heroVisualClean .heroImageWrap{height:clamp(300px,55vw,480px);}}
+@media(max-width:520px){.heroFinal .heroVisualClean .heroImageWrap{height:280px;}.heroFinal .heroInfoRow{grid-template-columns:1fr;}.heroFinal .heroCaptionBelow{padding:18px 19px;}.heroFinal .heroVisualClean .heroStat{border-left:0;border-top:3px solid #e4b65c;padding:17px 19px;}}
 
-.heroFinal .imageLabel b {
-    display: block;
-    font-size: 17px;
-    line-height: 1.4;
-    overflow-wrap: break-word;
-}
-
-.heroFinal .heroStat {
-    right: 0;
-    bottom: 0;
-    z-index: 3;
-}
-
-/* Responsive correction */
-@media (max-width: 640px) {
-    .heroFinal .imageLabel {
-        top: 24px;
-        bottom: auto;
-        left: 18px;
-        right: 150px;
-    }
-
-    .heroFinal .imageLabel b {
-        font-size: 16px;
-    }
-}
-
+/* Show every participant in the original frame rather than cropping the school photographs */
+.girlStory img{height:auto;max-height:430px;object-fit:contain;object-position:center;background:#f5f7f6;}
+.girlPreviewImage{height:auto;min-height:0;overflow:hidden;}
+.girlPreviewImage img{height:auto;object-fit:contain;}
+.girlPreviewImage span{position:static;display:block;border-radius:0;background:#112842;color:#fff;padding:10px 16px;}
+@media(max-width:800px){.girlStory img,.girlPreviewImage img{height:auto;}}
+@media(max-width:480px){.girlStory img,.girlPreviewImage img{height:auto;}}
