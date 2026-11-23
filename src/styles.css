@@ -82,3 +82,41 @@ body{background:#fff;color:var(--ink)}
 .girlStory{align-items:start}
 .girlStory>div{padding-top:8px}
 .girlStory img{object-position:center top}
+
+
+/* FIX: Homepage image caption and 20 participants card */
+
+.heroFinal .imageLabel {
+    left: 20px;
+    right: 255px;
+    bottom: 24px;
+    z-index: 2;
+}
+
+.heroFinal .imageLabel b {
+    display: block;
+    font-size: 17px;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+}
+
+.heroFinal .heroStat {
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+/* Responsive correction */
+@media (max-width: 640px) {
+    .heroFinal .imageLabel {
+        top: 24px;
+        bottom: auto;
+        left: 18px;
+        right: 150px;
+    }
+
+    .heroFinal .imageLabel b {
+        font-size: 16px;
+    }
+}
+
