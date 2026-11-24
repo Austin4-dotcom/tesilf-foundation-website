@@ -126,3 +126,16 @@ body{background:#fff;color:var(--ink)}
 .girlPreviewImage span{position:static;display:block;border-radius:0;background:#112842;color:#fff;padding:10px 16px;}
 @media(max-width:800px){.girlStory img,.girlPreviewImage img{height:auto;}}
 @media(max-width:480px){.girlStory img,.girlPreviewImage img{height:auto;}}
+
+/* Make partnership and involvement card arrows real, keyboard-accessible controls */
+.choice .choiceArrow {
+  position:absolute;right:18px;top:18px;display:flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border:0;border-radius:50%;background:#edf5ef;color:var(--green2);
+  cursor:pointer;transition:background .18s ease,transform .18s ease;
+}
+.choice .choiceArrow:hover {background:#d8e9dd;transform:translateX(3px)}
+.choice .choiceArrow:focus-visible {outline:3px solid var(--gold);outline-offset:3px}
+.choice h3 {padding-right:38px}
+
+/* Keep the contact Gmail link styled as a button */
+.contactActions a.btn { text-decoration: none; }
